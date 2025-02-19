@@ -1,0 +1,38 @@
+const express = require("express");
+const router = express.Router();
+const adminController = require("../controllers/AdminController.js");
+
+router.post('/login',adminController.Login);
+router.post('/checktoken',adminController.checkToken);
+router.get('',adminController.getallFarmer);
+router.get('/farmers-feeds',adminController.getfeedordercount);
+router.get('/farmers-order/:status',adminController.getFarmerdetailsbyStatus);
+router.get('/farmers-feed-orders',adminController.getAllfarmerOrder);
+router.get("/feed",adminController.getALLFeed);
+router.post('/addfeed',adminController.addFeed);
+router.post('/editfeed/:Feed_id',adminController.editFeed);
+router.get('/getticketdetails',adminController.getTicketDetails);
+router.get('/allticket',adminController.getTicket); 
+router.get('/cost-ticket',adminController.getCostTicket);
+router.post('/addadmin',adminController.addAdmin);
+router.get('/getadmin',adminController.getAdmin);
+router.post('/adminupdate/:id',adminController.updatetype);
+router.get('/getdocdetails',adminController.getdocdetails);
+router.post('/addfarmer',adminController.addfarmer);
+router.post('/addcow',adminController.addcow);
+router.post('/addvlcc',adminController.addVLCC);
+router.get('/getvlcc',adminController.getallVLCC);
+router.post('/addbmc',adminController.addBMC);
+router.post('/editbmc/:id',adminController.editBMC);
+router.get('/getbmc',adminController.getBMC);
+router.post('/addcluster',adminController.addcluster);
+router.post('/editcluster/:id',adminController.editcluster);
+router.get('/getallcluster',adminController.getallcluster);
+router.post('/addstaff',adminController.addstaff);
+router.post('/editstaff/:id',adminController.editstaff);
+router.get('/getallstaff',adminController.getAllStaff);
+router.post('/adddoc',adminController.adddoc);
+router.post('/editdoc/:id',adminController.edidoc);
+router.get('/getalldoc',adminController.getalldoc);
+
+module.exports = router; 
